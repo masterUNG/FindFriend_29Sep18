@@ -8,7 +8,26 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let friendStrings = ["Doramon", "Doramy", "Nopita", "Suneko", "Chisuka", "MasterUNG", "Doramon", "Doramy", "Nopita", "Suneko", "Chisuka", "MasterUNG", "Doramon", "Doramy", "Nopita", "Suneko", "Chisuka", "MasterUNG"]
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return friendStrings.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
+        cell.textLabel?.text = friendStrings[indexPath.row]
+        return cell
+        
+    }
+    
+    
+    
+    
     
     
     
